@@ -60,17 +60,8 @@ public class KWICImpl implements KWIC {
             }
             writer.close();
 
-            // 获取输入
-            List<String> strings = input.readFile("received_file.txt");
-            // 循环推进
-            List<Line> lines = shifter.shift(strings);
-            // 字母表排序
-            sorter.sort(lines);
-            // 输出结果
-            System.out.println("运行结果：");
-            for (Line line1 : lines) {
-                System.out.println(line1.toString());
-            }
+            fileName = "received_file.txt";
+            execute();
 
             socket.close();
         } catch (IOException e) {
